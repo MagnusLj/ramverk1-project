@@ -1,19 +1,19 @@
 <?php
 
-namespace Malm18\User;
+namespace Malm18\Project;
 
 use Anax\DatabaseActiveRecord\ActiveRecordModel;
 
 /**
  * A database driven model.
  */
-class User extends ActiveRecordModel
+class Questions extends ActiveRecordModel
 {
 
     /**
      * @var string $tableName name of the database table.
      */
-    protected $tableName = "User";
+    protected $tableName = "Questions";
 
     /**
      * Columns in the table.
@@ -29,25 +29,38 @@ class User extends ActiveRecordModel
     // public $active;
 
     public $id;
+    public $title;
+    public $text;
     public $nick;
-    public $password;
+    // public $password;
     public $created;
-    public $updated;
-    public $deleted;
-    public $active;
+    // public $updated;
+    // public $deleted;
+    // public $active;
 
 
-    /**
- * Set the password.
- *
- * @param string $password the password to use.
- *
- * @return void
- */
-    public function setPassword($password)
-    {
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
-    }
+
+
+
+
+
+
+
+
+
+
+
+ //    /**
+ // * Set the password.
+ // *
+ // * @param string $password the password to use.
+ // *
+ // * @return void
+ // */
+ //    public function setPassword($password)
+ //    {
+ //        $this->password = password_hash($password, PASSWORD_DEFAULT);
+ //    }
 
 
 // /**
@@ -65,20 +78,20 @@ class User extends ActiveRecordModel
 //         return password_verify($password, $this->password);
 //     }
 
-/**
- * Verify the acronym and the password, if successful the object contains
- * all details from the database row.
- *
- * @param string $nick  acronym to check.
- * @param string $password the password to use.
- *
- * @return boolean true if acronym and password matches, else false.
- */
-    public function verifyPassword($nick, $password)
-    {
-        $this->find("nick", $nick);
-        return password_verify($password, $this->password);
-    }
+// /**
+//  * Verify the acronym and the password, if successful the object contains
+//  * all details from the database row.
+//  *
+//  * @param string $nick  acronym to check.
+//  * @param string $password the password to use.
+//  *
+//  * @return boolean true if acronym and password matches, else false.
+//  */
+//     public function verifyPassword($nick, $password)
+//     {
+//         $this->find("nick", $nick);
+//         return password_verify($password, $this->password);
+//     }
 
 
 

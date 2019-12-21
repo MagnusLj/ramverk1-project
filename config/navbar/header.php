@@ -93,5 +93,20 @@ return [
             "url" => "book",
             "title" => "Böcker",
         ],
+        [
+            "text" => "Användare",
+            "url" => "peoplelist",
+            "title" => "Användare",
+        ],
+        [
+            "text" => "Skapa konto",
+            "url" => "user/create",
+            "title" => "Skapa konto",
+        ],
+        [
+            "text" => "Frågor",
+            "url" => "questions",
+            "title" => "Frågor",
+        ],
     ],
 ];

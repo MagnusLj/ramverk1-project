@@ -30,27 +30,27 @@ class CreateUserForm extends FormModel
         $this->form->create(
             [
                 "id" => __CLASS__,
-                "legend" => "Create user",
+                "legend" => "Skapa konto",
             ],
             [
-                "acronym" => [
+                "nick" => [
                     "type"        => "text",
                 ],
 
-                "password" => [
+                "lösenord" => [
                     "type"        => "password",
                 ],
 
-                "password-again" => [
+                "lösenord-igen" => [
                     "type"        => "password",
                     "validation" => [
-                        "match" => "password"
+                        "match" => "lösenord"
                     ],
                 ],
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Create user",
+                    "value" => "Skapa konto",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
@@ -71,9 +71,9 @@ class CreateUserForm extends FormModel
     public function callbackSubmit()
     {
         // Get values from the submitted form
-        $acronym       = $this->form->value("acronym");
-        $password      = $this->form->value("password");
-        $passwordAgain = $this->form->value("password-again");
+        $nick       = $this->form->value("nick");
+        $password      = $this->form->value("lösenord");
+        $passwordAgain = $this->form->value("lösenord-igen");
 
         // Check password matches
         if ($password !== $passwordAgain) {
@@ -91,11 +91,11 @@ class CreateUserForm extends FormModel
         //    ->fetch();
         $user = new User();
         $user->setDb($this->di->get("dbqb"));
-        $user->acronym = $acronym;
+        $user->nick = $nick;
         $user->setPassword($password);
         $user->save();
 
-        $this->form->addOutput("User was created.");
+        $this->form->addOutput("Kontot skapades.");
         return true;
     }
 
