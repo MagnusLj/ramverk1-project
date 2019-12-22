@@ -78,15 +78,18 @@ class QuestionsController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function onequestionAction(int $id) : object
+    public function onequestionActionGet() : object
     {
         $page = $this->di->get("page");
-        $oneQuestion = new Questions($this->di, $id);
+        $request = $this->di->get("request");
+        $id = $request->getGet("id");
+        echo $id;
+        $oneQuestion = new Questions();
         $oneQuestion->setDb($this->di->get("dbqb"));
         // $form->check();
 
         $page->add("questions/crud/onequestion", [
-            "items" => $oneQuestion->findAll("id", $id),
+            "items" => $oneQuestion->find("id", $id),
         ]);
 
         return $page->render([

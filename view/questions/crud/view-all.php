@@ -44,7 +44,7 @@ endif;
 
         <td><?= $item->nick ?></td>
         <td>
-            <a href="<?= url("questions/onequestion/{$item->id}"); ?>"><?= $item->title ?></a>
+            <a href="<?= url("questions/onequestion?id={$item->id}"); ?>"><?= $item->title ?></a>
         </td>
     </tr>
     <?php endforeach; ?>

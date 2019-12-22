@@ -13,7 +13,7 @@ CREATE TABLE Questions (
     "title" TEXT,
     "text" TEXT,
     "nick" TEXT,
-    "created" TIMESTAMP
+    "created" DATETIME DEFAULT (STRFTIME('%Y-%m-%d %H:%M', 'NOW', 'localtime'))
 );
 
 INSERT INTO Questions (
@@ -21,8 +21,8 @@ INSERT INTO Questions (
     "text",
     "nick"
 ) VALUES (
-    "First title",
-    "First text",
+    "Hur många bultar finns det i Ölandsbron?",
+    "Det här har jag undrat över länge. Jag minns inte om frågan nånsin besvarades i Nile City. Är det någon som vet?",
     "User1"
 )
 ;
@@ -32,8 +32,8 @@ INSERT INTO Questions (
     "text",
     "nick"
 ) VALUES (
-    "Second title",
-    "Second text",
+    "Varför är det alltid motvind i Malmö?",
+    "Det har jag alltid undrat över. Det kvittar om man svänger runt ett hörn så har man motvind ändå. Ibland har man fortfarande motvind än om man vänder och cyklar åt andra hållet. Kan någon upplysa mig om det här?",
     "User2"
 )
 ;
