@@ -125,6 +125,9 @@ class QuestionsController implements ContainerInjectableInterface
 
         $questioncomments = new Questioncomments();
         $questioncomments->setDb($this->di->get("dbqb"));
+
+        $answercomments = new Answercomments();
+        $answercomments->setDb($this->di->get("dbqb"));
         // $form->check();
 
         $page->add("questions/crud/onequestion", [
@@ -137,6 +140,47 @@ class QuestionsController implements ContainerInjectableInterface
             "title" => "View a question",
         ]);
     }
+
+
+
+
+    /**
+     * Handler with form to update an item.
+     *
+     * @param int $id the id to update.
+     *
+     * @return object as a response object
+     */
+    public function oneanswerActionGet() : object
+    {
+        $page = $this->di->get("page");
+        $request = $this->di->get("request");
+        $id = $request->getGet("id");
+        $answerid = $request->getGet("answerid");
+        // echo $id;
+        $oneQuestion = new Questions();
+        $oneQuestion->setDb($this->di->get("dbqb"));
+
+        $answers = new Answers();
+        $answers->setDb($this->di->get("dbqb"));
+
+        $answercomments = new Answercomments();
+        $answercomments->setDb($this->di->get("dbqb"));
+        // $form->check();
+
+        $page->add("questions/crud/oneanswer", [
+            "items" => $oneQuestion->find("id", $id),
+            "answers" => $answers->find("id", $answerid),
+            "answercomments" => $answercomments->findAllWhere("answerid = ?", $answerid),
+        ]);
+
+        return $page->render([
+            "title" => "View a question",
+        ]);
+    }
+
+
+
 
 
 // findAllWhere("id = ?", $id)

@@ -14,7 +14,7 @@ $items = isset($items) ? $items : null;
 
 $answers = isset($answers) ? $answers : null;
 
-$questioncomments = isset($questioncomments) ? $questioncomments : null;
+$answercomments = isset($answercomments) ? $answercomments : null;
 
 // var_dump($items);
 // var_dump($answers);
@@ -40,38 +40,25 @@ endif;
 ?>
 
 <!-- <table> -->
-
+<h3>Svar</h3>
     <!-- <tr> -->
-        <p><?= $items->created ?> <?= $items->nick ?></p>
+        <p><?= $answers->created ?> <?= $answers->nick ?></p>
     <!-- </tr> -->
 
     <!-- <tr> -->
-        <p><?= $items->text ?></p>
+        <p><?= $answers->text ?></p>
     <!-- </tr> -->
 
     <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kommentarer</h5>
 
-    <?php foreach ($questioncomments as $questioncomment) : ?>
+    <?php foreach ($answercomments as $answercomment) : ?>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->created ?> <?= $questioncomment->nick ?></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $answercomment->created ?> <?= $answercomment->nick ?></p>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->text ?></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $answercomment->text ?></p>
 
     <?php endforeach; ?>
 
 
-
-    <h3>Svar</h3>
-
-<?php foreach ($answers as $answer) : ?>
-
-    <?php $text = (strlen($answer->text) > 70) ? substr($answer->text,0,67).'...' : $answer->text; ?>
-
-    <p><?= $answer->created ?> <?= $answer->nick ?></p>
-
-    <a href="<?= url("questions/oneanswer?id={$items->id}&answerid={$answer->id}"); ?>"><?= $text ?></a>
-
-
-<?php endforeach; ?>
 
 <!-- </table> -->
