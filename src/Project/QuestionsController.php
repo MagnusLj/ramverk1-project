@@ -122,11 +122,15 @@ class QuestionsController implements ContainerInjectableInterface
 
         $answers = new Answers();
         $answers->setDb($this->di->get("dbqb"));
+
+        $questioncomments = new Questioncomments();
+        $questioncomments->setDb($this->di->get("dbqb"));
         // $form->check();
 
         $page->add("questions/crud/onequestion", [
             "items" => $oneQuestion->find("id", $id),
             "answers" => $answers->findAllWhere("questionid = ?", $id),
+            "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
         ]);
 
         return $page->render([

@@ -14,6 +14,8 @@ $items = isset($items) ? $items : null;
 
 $answers = isset($answers) ? $answers : null;
 
+$questioncomments = isset($questioncomments) ? $questioncomments : null;
+
 // var_dump($items);
 // var_dump($answers);
 
@@ -23,7 +25,7 @@ $urlToDelete = url("book/delete");
 
 
 
-?><h1>Hej</h1>
+?><h1> <?= $items->title ?> </h1>
 
 <p>
     <a href="<?= $urlToCreate ?>">Create</a> |
@@ -46,6 +48,19 @@ endif;
     <!-- <tr> -->
         <p><?= $items->text ?></p>
     <!-- </tr> -->
+
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kommentarer</h5>
+
+    <?php foreach ($questioncomments as $questioncomment) : ?>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->created ?> <?= $questioncomment->nick ?></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->text ?></p>
+
+    <?php endforeach; ?>
+
+
+
     <h3>Svar</h3>
 
 <?php foreach ($answers as $answer) : ?>
