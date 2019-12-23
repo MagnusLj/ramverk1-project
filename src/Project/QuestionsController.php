@@ -71,6 +71,39 @@ class QuestionsController implements ContainerInjectableInterface
 
 // findWhere(column, värde_pa_kolumn)
 
+    // /**
+    //  * Handler with form to update an item.
+    //  *
+    //  * @param int $id the id to update.
+    //  *
+    //  * @return object as a response object
+    //  */
+    // public function onequestionActionGet() : object
+    // {
+    //     $page = $this->di->get("page");
+    //     $request = $this->di->get("request");
+    //     $id = $request->getGet("id");
+    //     echo $id;
+    //     $oneQuestion = new Questions();
+    //     $oneQuestion->setDb($this->di->get("dbqb"));
+    //
+    //     $answers = new Answers();
+    //     $answers->setDb($this->di->get("dbqb"));
+    //     // $form->check();
+    //
+    //     $page->add("questions/crud/onequestion", [
+    //         "items" => $oneQuestion->find("id", $id),
+    //         "answers" => $answers->find("questionid", $id),
+    //     ]);
+    //
+    //     return $page->render([
+    //         "title" => "View a question",
+    //     ]);
+    // }
+
+
+
+
     /**
      * Handler with form to update an item.
      *
@@ -86,10 +119,14 @@ class QuestionsController implements ContainerInjectableInterface
         echo $id;
         $oneQuestion = new Questions();
         $oneQuestion->setDb($this->di->get("dbqb"));
+
+        $answers = new Answers();
+        $answers->setDb($this->di->get("dbqb"));
         // $form->check();
 
         $page->add("questions/crud/onequestion", [
             "items" => $oneQuestion->find("id", $id),
+            "answers" => $answers->findAllWhere("questionid = ?", $id),
         ]);
 
         return $page->render([
@@ -98,9 +135,7 @@ class QuestionsController implements ContainerInjectableInterface
     }
 
 
-
-
-
+// findAllWhere("id = ?", $id)
 
 
 

@@ -12,6 +12,8 @@ namespace Anax\View;
 // Gather incoming variables and use default values if not set
 $items = isset($items) ? $items : null;
 
+// var_dump($items);
+
 // Create urls for navigation
 $urlToCreate = url("book/create");
 $urlToDelete = url("book/delete");

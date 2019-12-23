@@ -12,7 +12,10 @@ namespace Anax\View;
 // Gather incoming variables and use default values if not set
 $items = isset($items) ? $items : null;
 
+$answers = isset($answers) ? $answers : null;
+
 // var_dump($items);
+// var_dump($answers);
 
 // Create urls for navigation
 $urlToCreate = url("book/create");
@@ -20,7 +23,7 @@ $urlToDelete = url("book/delete");
 
 
 
-?><h1><?= $items->title ?></h1>
+?><h1>Hej</h1>
 
 <p>
     <a href="<?= $urlToCreate ?>">Create</a> |
@@ -43,5 +46,14 @@ endif;
     <!-- <tr> -->
         <p><?= $items->text ?></p>
     <!-- </tr> -->
-    <h3>Kommentarer</h3>
+    <h3>Svar</h3>
+
+<?php foreach ($answers as $answer) : ?>
+
+    <p><?= $answer->created ?> <?= $answer->nick ?></p>
+
+    <p><?= $answer->text ?></p>
+
+<?php endforeach; ?>
+
 <!-- </table> -->
