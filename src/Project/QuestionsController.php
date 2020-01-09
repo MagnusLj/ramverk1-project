@@ -128,12 +128,17 @@ class QuestionsController implements ContainerInjectableInterface
 
         $answercomments = new Answercomments();
         $answercomments->setDb($this->di->get("dbqb"));
-        // $form->check();
+
+        $tags = new Tags();
+        $tags->setDb($this->di->get("dbqb"));
+
+        // var_dump($tags);
 
         $page->add("questions/crud/onequestion", [
             "items" => $oneQuestion->find("id", $id),
             "answers" => $answers->findAllWhere("questionid = ?", $id),
             "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
+            "tags" => $tags->findAllWhere("questionid = ?", $id),
         ]);
 
         return $page->render([
@@ -167,6 +172,7 @@ class QuestionsController implements ContainerInjectableInterface
         $answercomments = new Answercomments();
         $answercomments->setDb($this->di->get("dbqb"));
         // $form->check();
+
 
         $page->add("questions/crud/oneanswer", [
             "items" => $oneQuestion->find("id", $id),
