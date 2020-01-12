@@ -7,13 +7,13 @@ use Anax\DatabaseActiveRecord\ActiveRecordModel;
 /**
  * A database driven model.
  */
-class Tags extends ActiveRecordModel
+class Tagsquestions extends ActiveRecordModel
 {
 
     /**
      * @var string $tableName name of the database table.
      */
-    protected $tableName = "Tags";
+    protected $tableName = "Tagsquestions";
 
     /**
      * Columns in the table.
@@ -23,6 +23,6 @@ class Tags extends ActiveRecordModel
      */
 
     public $id;
-    // public $questionid;
-    public $tag;
+    public $questionid;
+    public $tagid;
 }

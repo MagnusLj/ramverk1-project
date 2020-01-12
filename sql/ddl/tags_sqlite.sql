@@ -10,65 +10,58 @@
 
 --
 -- Ämnen
--- Underhållning, Natur/Vetenskap, Kultur/Litteratur, Geografi, Historia, Sport/Fritid,
+--
+-- 1 Geografi
+-- 2 Historia
+-- 3 Kultur/Litteratur
+-- 4 Natur/Vetenskap
+-- 5 Sport/Fritid
+-- 6 Underhållning
 --
 DROP TABLE IF EXISTS Tags;
 CREATE TABLE Tags (
     "id" INTEGER PRIMARY KEY NOT NULL,
-    "questionid" INTEGER NOT NULL,
     "tag" VARCHAR NOT NULL
 );
 
 INSERT INTO Tags (
-    "questionid",
     "tag"
 ) VALUES (
-    1,
-    "Natur/Vetenskap"
-)
-;
-
-INSERT INTO Tags (
-    "questionid",
-    "tag"
-) VALUES (
-    1,
     "Geografi"
 )
 ;
 
 INSERT INTO Tags (
-    "questionid",
     "tag"
 ) VALUES (
-    1,
     "Historia"
 )
 ;
 
 INSERT INTO Tags (
-    "questionid",
     "tag"
 ) VALUES (
-    2,
+    "Kultur/Litteratur"
+)
+;
+
+INSERT INTO Tags (
+    "tag"
+) VALUES (
     "Natur/Vetenskap"
 )
 ;
 
 INSERT INTO Tags (
-    "questionid",
     "tag"
 ) VALUES (
-    2,
-    "Geografi"
+    "Sport/Fritid"
 )
 ;
 
 INSERT INTO Tags (
-    "questionid",
     "tag"
 ) VALUES (
-    2,
-    "Sport/Fritid"
+    "Underhållning"
 )
 ;
