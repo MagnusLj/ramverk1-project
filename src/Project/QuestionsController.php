@@ -130,11 +130,24 @@ class QuestionsController implements ContainerInjectableInterface
         $answercomments = new Answercomments();
         $answercomments->setDb($this->di->get("dbqb"));
 
-        $tags = new Tags();
-        $tags->setDb($this->di->get("dbqb"));
+    //    $tags = new Tags();
+    //    $tags->setDb($this->di->get("dbqb"));
 
-        $tags = new Tagsquestions();
-        $tags->setDb($this->di->get("dbqb"));
+    //    $tags = new Tagsquestions();
+    //    $tags->setDb($this->di->get("dbqb"));
+
+        $this->di->get("db")->connect();
+        $sql = "SELECT * FROM tagsquestions JOIN tags ON tagsquestions.tagid = tags.id WHERE questionid = $id
+
+        ;";
+        $tags = $this->di->get("db")->executeFetchAll($sql);
+
+
+        // SELECT *
+        // FROM kurs AS k
+        //     JOIN kurstillfalle AS kt
+        //         ON k.kod = kt.kurskod;
+
 
         // var_dump($tags);
 
@@ -147,12 +160,7 @@ class QuestionsController implements ContainerInjectableInterface
 
 
 
-            "tags" => $tags->findAllWhereJoin(
-                "tagsquestions.tagid = ?",
-                $id,
-                "tags",
-                "tagsquestions.tagid = tags.tagid"
-            ),
+            "tags" => $tags,
 
 
 
