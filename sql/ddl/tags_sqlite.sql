@@ -27,41 +27,41 @@ CREATE TABLE Tags (
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Geografi"
+    "geografi"
 )
 ;
 
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Historia"
+    "historia"
 )
 ;
 
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Kultur/Litteratur"
+    "kulturlitteratur"
 )
 ;
 
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Natur/Vetenskap"
+    "naturvetenskap"
 )
 ;
 
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Sport/Fritid"
+    "sportfritid"
 )
 ;
 
 INSERT INTO Tags (
     "tag"
 ) VALUES (
-    "Underhållning"
+    "underhallning"
 )
 ;

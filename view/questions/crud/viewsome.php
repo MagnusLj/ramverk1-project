@@ -27,63 +27,29 @@ $urlToDelete = url("book/delete");
 
 
 
-?><h1> <?= $items->title ?> </h1>
+?>
 
 <p>
     <a href="<?= $urlToCreate ?>">Create</a> |
     <a href="<?= $urlToDelete ?>">Delete</a>
 </p>
 
-<?php if (!$items) : ?>
-    <p>There are no books to show.</p>
+<h1>Frågor med den valda tagen</h1>
+
+<?php if (!$questions) : ?>
+    <p>Det finns inga frågor med den tagen.</p>
     <?php
     return;
 endif;
 ?>
 
-<!-- <table> -->
 
-    <!-- <tr> -->
-        <p><?= $items->created ?> <?= $items->nick ?></p>
-    <!-- </tr> -->
+    <?php foreach ($questions as $question) : ?>
 
-    <!-- <tr> -->
-        <p><?= $items->text ?></p>
-    <!-- </tr> -->
-
-
-    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tags</h5>
-
-    <?php foreach ($tags as $tag) : ?>
-
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $tag->tag ?></p>
+        <p><a href="<?= url("questions/onequestion?id={$question->questionid}"); ?>"><?= $question->title ?></a></p>
 
     <?php endforeach; ?>
 
 
-    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kommentarer</h5>
-
-    <?php foreach ($questioncomments as $questioncomment) : ?>
-
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->created ?> <?= $questioncomment->nick ?></p>
-
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->text ?></p>
-
-    <?php endforeach; ?>
-
-
-
-    <h3>Svar</h3>
-
-<?php foreach ($answers as $answer) : ?>
-
-    <?php $text = (strlen($answer->text) > 70) ? substr($answer->text,0,67).'...' : $answer->text; ?>
-
-    <p><?= $answer->created ?> <?= $answer->nick ?></p>
-
-    <a href="<?= url("questions/oneanswer?id={$items->id}&answerid={$answer->id}"); ?>"><?= $text ?></a>
-
-
-<?php endforeach; ?>
 
 <!-- </table> -->

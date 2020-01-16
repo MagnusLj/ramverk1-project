@@ -83,21 +83,41 @@ class TagsController implements ContainerInjectableInterface
         $page = $this->di->get("page");
         $request = $this->di->get("request");
         $tag = $request->getGet("tag");
-        echo $tag;
+        // echo $tag;
 
-        $questions = new Questions();
-        $questions->setDb($this->di->get("dbqb"));
+        // $questions = new Questions();
+        // $questions->setDb($this->di->get("dbqb"));
+        //
+        // $tags = new Tags();
+        // $tags->setDb($this->di->get("dbqb"));
 
-        $tags = new Tags();
-        $tags->setDb($this->di->get("dbqb"));
+
+        $this->di->get("db")->connect();
+        // $sql = "SELECT * FROM tagsquestions JOIN tags ON tagsquestions.tagid = tags.id WHERE questionid = $id
+        //
+        // ;";
+
+        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.tag = '$tag';"
+;
+
+
+
+
+        $questions = $this->di->get("db")->executeFetchAll($sql);
+
+
+
+
 
         // var_dump($tags);
 
         $page->add("questions/crud/viewsome", [
-            "items" => $oneQuestion->find("id", $id),
-            "answers" => $answers->findAllWhere("questionid = ?", $id),
-            "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
-            "tags" => $tags->findAllWhere("questionid = ?", $id),
+            // "items" => $oneQuestion->find("id", $id),
+            // "questions" => $questions->findAllWhere("questionid = ?", $id),
+            "questions" => $questions,
+            "tag" => $tag,
+            // "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
+            // "tags" => $tags->findAllWhere("questionid = ?", $id),
         ]);
 
         return $page->render([

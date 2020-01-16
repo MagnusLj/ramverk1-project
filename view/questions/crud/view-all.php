@@ -20,7 +20,7 @@ $urlToDelete = url("book/delete");
 
 
 
-?><h1>View all users</h1>
+?><h1>Alla frågor</h1>
 
 <p>
     <a href="<?= $urlToCreate ?>">Create</a> |

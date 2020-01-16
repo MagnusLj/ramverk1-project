@@ -32,7 +32,7 @@ $urlToDelete = url("book/delete");
 endif;
 ?>
 
-<p>Välj en tagg nedan för att se alla frågor kopplade till den taggen.</p>
+<p>Välj en tag nedan för att se alla frågor kopplade till den tagen.</p>
 
 <p><a href="<?= url("tags/viewsome?tag=geografi"); ?>">Geografi</a></p>
 <p><a href="<?= url("tags/viewsome?tag=historia"); ?>">Historia</a></p>
