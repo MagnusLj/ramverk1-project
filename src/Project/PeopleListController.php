@@ -121,7 +121,7 @@ class PeopleListController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "A create user page",
+            "title" => "Skapa ny användare",
         ]);
     }
 }

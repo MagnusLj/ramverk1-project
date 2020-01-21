@@ -18,7 +18,7 @@ $urlToDelete = url("book/delete");
 
 
 
-?><h1>View all users</h1>
+?><h1>Se alla användare</h1>
 
 <p>
     <a href="<?= $urlToCreate ?>">Create</a> |
@@ -34,16 +34,12 @@ endif;
 
 <table>
     <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Picture</th>
+        <th></th>
+        <th></th>
     </tr>
     <?php foreach ($items as $item) : ?>
     <tr>
-        <td>
-            <a href="<?= url("book/update/{$item->id}"); ?>"><?= $item->id ?></a>
-        </td>
+        <td><img src="<?php echo $item->gravatarUrl; ?>" alt="" /></td>
         <td><?= $item->nick ?></td>
     </tr>
     <?php endforeach; ?>
