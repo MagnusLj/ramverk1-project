@@ -215,6 +215,80 @@ class QuestionsController implements ContainerInjectableInterface
 
 
 
+
+
+    /**
+     * Handler with form to update an item.
+     *
+     * @param int $id the id to update.
+     *
+     * @return object as a response object
+     */
+    public function oneusersActionGet() : object
+    {
+        $page = $this->di->get("page");
+        $request = $this->di->get("request");
+        $id = $request->getGet("id");
+        echo $id;
+
+        $questions = new Questions();
+        $questions->setDb($this->di->get("dbqb"));
+
+        $answers = new Answers();
+        $answers->setDb($this->di->get("dbqb"));
+
+        $questioncomments = new Questioncomments();
+        $questioncomments->setDb($this->di->get("dbqb"));
+
+        $answercomments = new Answercomments();
+        $answercomments->setDb($this->di->get("dbqb"));
+
+    //    $tags = new Tags();
+    //    $tags->setDb($this->di->get("dbqb"));
+
+    //    $tags = new Tagsquestions();
+    //    $tags->setDb($this->di->get("dbqb"));
+
+        $this->di->get("db")->connect();
+        // $sql = "SELECT * FROM tagsquestions JOIN tags ON tagsquestions.tagid = tags.id WHERE questionid = $id
+        // ;";
+        // $tags = $this->di->get("db")->executeFetchAll($sql);
+
+
+        // SELECT *
+        // FROM kurs AS k
+        //     JOIN kurstillfalle AS kt
+        //         ON k.kod = kt.kurskod;
+
+
+        // var_dump($tags);
+
+        $page->add("questions/crud/oneusers", [
+            "items" => $questions->find("id", $id),
+            "questions" => $questions->findAllWhere("userid = ?", $id),
+            "answers" => $answers->findAllWhere("userid = ?", $id),
+            "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
+
+            // "tags" => $tags->findAllWhere("questionid = ?", $id),
+
+
+
+            // "tags" => $tags,
+
+
+
+
+        ]);
+
+        return $page->render([
+            "title" => "View a question",
+        ]);
+    }
+
+
+
+
+
 // findAllWhere("id = ?", $id)
 
 

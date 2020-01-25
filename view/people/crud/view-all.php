@@ -26,7 +26,7 @@ $urlToDelete = url("book/delete");
 </p>
 
 <?php if (!$items) : ?>
-    <p>There are no books to show.</p>
+    <p>Det finns inga användare.</p>
     <?php
     return;
 endif;
@@ -39,8 +39,12 @@ endif;
     </tr>
     <?php foreach ($items as $item) : ?>
     <tr>
-        <td><img src="<?php echo $item->gravatarUrl; ?>" alt="" /></td>
-        <td><?= $item->nick ?></td>
+        <td>
+<a href="<?= url("questions/oneusers?id={$item->id}"); ?>">
+            <img src="<?php echo $item->gravatarUrl; ?>" alt="" />
+</a>
+        </td>
+        <td><a href="<?= url("questions/oneusers?id={$item->id}"); ?>"><?= $item->nick ?></a></td>
     </tr>
     <?php endforeach; ?>
 </table>
