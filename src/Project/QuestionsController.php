@@ -55,10 +55,20 @@ class QuestionsController implements ContainerInjectableInterface
      */
     public function indexActionGet() : object
     {
+        // var_dump($_SESSION);
+
+
+
         $page = $this->di->get("page");
         // $people = new People();
         $questions = new Questions();
         $questions->setDb($this->di->get("dbqb"));
+
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/header2A");
+        } else {
+            $page->add("questions/crud/headerA");
+        }
 
         $page->add("questions/crud/view-all", [
             "items" => $questions->findAll(),
@@ -151,6 +161,12 @@ class QuestionsController implements ContainerInjectableInterface
 
         // var_dump($tags);
 
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/header2");
+        } else {
+            $page->add("questions/crud/header");
+        }
+
         $page->add("questions/crud/onequestion", [
             "items" => $oneQuestion->find("id", $id),
             "answers" => $answers->findAllWhere("questionid = ?", $id),
@@ -198,6 +214,13 @@ class QuestionsController implements ContainerInjectableInterface
         $answercomments = new Answercomments();
         $answercomments->setDb($this->di->get("dbqb"));
         // $form->check();
+
+
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/header2");
+        } else {
+            $page->add("questions/crud/header");
+        }
 
 
         $page->add("questions/crud/oneanswer", [

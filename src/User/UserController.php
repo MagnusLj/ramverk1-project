@@ -90,6 +90,29 @@ class UserController implements ContainerInjectableInterface
     }
 
 
+    /**
+     * Description.
+     *
+     * @param datatype $variable Description
+     *
+     * @throws Exception
+     *
+     * @return object as a response object
+     */
+    public function logoutAction() : object
+    {
+        $page = $this->di->get("page");
+        $response = $this->di->get("response");
+
+        $nick = $_SESSION["nick"] ?? null;
+
+        $_SESSION["nick"] = null;
+        // $_SESSION["flashmessage"] = "Användare $nick har loggat ut.";
+
+        return $response->redirect("questions");
+    }
+
+
 
     /**
      * Description.

@@ -64,7 +64,7 @@ class UserLoginForm extends FormModel
     public function callbackSubmit()
     {
         // Get values from the submitted form
-        $acronym       = $this->form->value("user");
+        $nick       = $this->form->value("user");
         $password      = $this->form->value("password");
 
         // Try to login
@@ -85,7 +85,8 @@ class UserLoginForm extends FormModel
 
         $user = new User();
         $user->setDb($this->di->get("dbqb"));
-        $res = $user->verifyPassword($acronym, $password);
+        $res = $user->verifyPassword($nick, $password);
+        $response = $this->di->get("response");
 
         if (!$res) {
             $this->form->rememberValues();
@@ -93,7 +94,15 @@ class UserLoginForm extends FormModel
             return false;
         }
 
-        $this->form->addOutput("User " . $user->acronym . " logged in.");
+        $this->form->addOutput("User " . $user->nick . " logged in.");
+
+
+
+        $_SESSION["nick"] = $user->nick;
+        // $_SESSION["flashmessage"] = "Välkommen, o store $user->nick!";
+
+        return $response->redirect("questions");
+
         return true;
     }
 

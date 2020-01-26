@@ -15,17 +15,11 @@ $items = isset($items) ? $items : null;
 // var_dump($items);
 
 // Create urls for navigation
-$urlToCreate = url("book/create");
-$urlToDelete = url("book/delete");
 
 
 
 ?><h1>Alla frågor</h1>
 
-<p>
-    <a href="<?= $urlToCreate ?>">Create</a> |
-    <a href="<?= $urlToDelete ?>">Delete</a>
-</p>
 
 <?php if (!$items) : ?>
     <p>There are no books to show.</p>
@@ -34,20 +28,12 @@ $urlToDelete = url("book/delete");
 endif;
 ?>
 
-<table>
-    <tr>
-        <!-- <th>Id</th> -->
-        <th>Användare</th>
-        <th>Titel</th>
-        <!-- <th>Picture</th> -->
-    </tr>
-    <?php foreach ($items as $item) : ?>
-    <tr>
 
-        <td><?= $item->nick ?></td>
-        <td>
-            <a href="<?= url("questions/onequestion?id={$item->id}"); ?>"><?= $item->title ?></a>
-        </td>
-    </tr>
+    <?php foreach ($items as $item) : ?>
+
+        <p><?= $item->nick ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="<?= url("questions/onequestion?id={$item->id}"); ?>"><?= $item->title ?></a></p>
+
     <?php endforeach; ?>
 </table>
