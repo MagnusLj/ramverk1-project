@@ -82,7 +82,7 @@ class TagsController implements ContainerInjectableInterface
     {
         $page = $this->di->get("page");
         $request = $this->di->get("request");
-        $tag = $request->getGet("tag");
+        $tagid = $request->getGet("tagid");
         // echo $tag;
 
         // $questions = new Questions();
@@ -97,7 +97,7 @@ class TagsController implements ContainerInjectableInterface
         //
         // ;";
 
-        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.tag = '$tag';"
+        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.id = '$tagid';"
 ;
 
 
@@ -115,7 +115,7 @@ class TagsController implements ContainerInjectableInterface
             // "items" => $oneQuestion->find("id", $id),
             // "questions" => $questions->findAllWhere("questionid = ?", $id),
             "questions" => $questions,
-            "tag" => $tag,
+            "tagid" => $tagid,
             // "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
             // "tags" => $tags->findAllWhere("questionid = ?", $id),
         ]);

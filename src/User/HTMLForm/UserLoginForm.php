@@ -94,7 +94,7 @@ class UserLoginForm extends FormModel
             return false;
         }
 
-        $this->form->addOutput("User " . $user->nick . " logged in.");
+        // $this->form->addOutput("User " . $user->nick . " logged in.");
 
 
 

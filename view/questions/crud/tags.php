@@ -34,9 +34,9 @@ endif;
 
 <p>Välj en tag nedan för att se alla frågor kopplade till den tagen.</p>
 
-<p><a href="<?= url("tags/viewsome?tag=geografi"); ?>">Geografi</a></p>
-<p><a href="<?= url("tags/viewsome?tag=historia"); ?>">Historia</a></p>
-<p><a href="<?= url("tags/viewsome?tag=kulturlitteratur"); ?>">Kultur/Litteratur</a></p>
-<p><a href="<?= url("tags/viewsome?tag=naturvetenskap"); ?>">Natur/Vetenskap</a></p>
-<p><a href="<?= url("tags/viewsome?tag=sportfritid"); ?>">Sport/Fritid</a></p>
-<p><a href="<?= url("tags/viewsome?tag=underhallning"); ?>">Underhållning</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=1"); ?>">Geografi</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=2"); ?>">Historia</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=3"); ?>">Kultur/Litteratur</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=4"); ?>">Natur/Vetenskap</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=5"); ?>">Sport/Fritid</a></p>
+<p><a href="<?= url("tags/viewsome?tagid=6"); ?>">Underhållning</a></p>
