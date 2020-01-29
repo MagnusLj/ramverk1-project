@@ -106,22 +106,35 @@ class QuestionsController implements ContainerInjectableInterface
         $lastid = $this->di->get("db")->executeFetchAll($sql);
         $newid = intval($lastid[0]->maxid) + 1;
 
-            var_dump($lastid[0]->maxid);
-            var_dump($newid);
+            // var_dump($lastid[0]->maxid);
+            // var_dump($newid);
             // var_dump($questiontext2);
             // var_dump($nick);
             // var_dump($id);
             // var_dump($tags);
             // var_dump($request);
 
-            // $questions = new Questions();
-            // $questions->setDb($this->di->get("dbqb"));
-            // $questions->nick = $nick;
-            // $questions->userid = $id;
-            // $questions->title = $questiontitle;
-            // $questions->text = $questiontext2;
-            //
-            // $questions->save();
+
+
+            $questions = new Questions();
+            $questions->setDb($this->di->get("dbqb"));
+            $questions->nick = $nick;
+            $questions->userid = $id;
+            $questions->title = $questiontitle;
+            $questions->text = $questiontext2;
+
+            $questions->save();
+
+            foreach ($tags as $tag) {
+                echo "tagid: " . $tag;
+                echo " questionid: " . $newid;
+                echo "<br>";
+                $tagsquestions = new Tagsquestions();
+                $tagsquestions->setDb($this->di->get("dbqb"));
+                $tagsquestions->tagid = $tag;
+                $tagsquestions->questionid = $newid;
+                $tagsquestions->save();
+            }
 
             // return true;
     }
