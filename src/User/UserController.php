@@ -77,6 +77,7 @@ class UserController implements ContainerInjectableInterface
     public function loginAction() : object
     {
         $page = $this->di->get("page");
+
         $form = new UserLoginForm($this->di);
         $form->check();
 
@@ -103,13 +104,31 @@ class UserController implements ContainerInjectableInterface
     {
         $page = $this->di->get("page");
         $response = $this->di->get("response");
+        $session = $this->di->get("session");
 
-        $nick = $_SESSION["nick"] ?? null;
+        // $nick = $_SESSION["nick"] ?? null;
+
+        $nick = $session->get("nick") ?? null;
 
         $_SESSION["nick"] = null;
+
+        $session->set("nick", null);
+
+        $session->set("id", null);
+
         // $_SESSION["flashmessage"] = "Användare $nick har loggat ut.";
 
         return $response->redirect("questions");
+
+        if (!$res) {
+            $this->form->rememberValues();
+            $this->form->addOutput("User or password did not match.");
+            return false;
+        }
+
+        // $this->form->addOutput("User " . $user->nick . " logged in.");
+
+
     }
 
 

@@ -87,6 +87,7 @@ class UserLoginForm extends FormModel
         $user->setDb($this->di->get("dbqb"));
         $res = $user->verifyPassword($nick, $password);
         $response = $this->di->get("response");
+        $session = $this->di->get("session");
 
         if (!$res) {
             $this->form->rememberValues();
@@ -96,9 +97,13 @@ class UserLoginForm extends FormModel
 
         // $this->form->addOutput("User " . $user->nick . " logged in.");
 
+        $session->set("nick", $user->nick);
 
+        $session->set("id", $user->id);
 
-        $_SESSION["nick"] = $user->nick;
+        // $_SESSION["nick"] = $user->nick;
+        //
+        // $_SESSION["id"] = $user->id;
         // $_SESSION["flashmessage"] = "Välkommen, o store $user->nick!";
 
         return $response->redirect("questions");

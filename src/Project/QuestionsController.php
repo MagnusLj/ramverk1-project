@@ -4,6 +4,7 @@ namespace Malm18\Project;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
+use Michelf\Markdown;
 // use VendorName\User\HTMLForm\UserLoginForm;
 // use VendorName\User\HTMLForm\CreateUserForm;
 
@@ -74,10 +75,63 @@ class QuestionsController implements ContainerInjectableInterface
             "items" => $questions->findAll(),
         ]);
 
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/newquestion");
+        }
+
         return $page->render([
             "title" => "A collection of questions",
         ]);
     }
+
+
+    public function indexActionPost() : object
+    {
+        $session = $this->di->get("session");
+        // $vader = $this->di->get("vader");
+        // $ipHandler = new IpHandler();
+        $request = $this->di->get("request");
+        $response = $this->di->get("response");
+        $questiontitle = $request->getPost("questiontitle");
+        $questiontext = $request->getPost("questiontext");
+        $tags = $request->getPost("tags");
+        $questiontext2 = Markdown::defaultTransform($questiontext);
+        $nick = $session->get("nick");
+        $id = $session->get("id");
+
+        $this->di->get("db")->connect();
+        $sql = "SELECT MAX(id) AS maxid
+                FROM Questions
+        ;";
+        $lastid = $this->di->get("db")->executeFetchAll($sql);
+        $newid = intval($lastid[0]->maxid) + 1;
+
+            var_dump($lastid[0]->maxid);
+            var_dump($newid);
+            // var_dump($questiontext2);
+            // var_dump($nick);
+            // var_dump($id);
+            // var_dump($tags);
+            // var_dump($request);
+
+            // $questions = new Questions();
+            // $questions->setDb($this->di->get("dbqb"));
+            // $questions->nick = $nick;
+            // $questions->userid = $id;
+            // $questions->title = $questiontitle;
+            // $questions->text = $questiontext2;
+            //
+            // $questions->save();
+
+            // return true;
+    }
+
+
+
+
+
+
+
 
 // findWhere(column, värde_pa_kolumn)
 
