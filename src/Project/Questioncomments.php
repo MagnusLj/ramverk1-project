@@ -32,6 +32,7 @@ class Questioncomments extends ActiveRecordModel
     public $questionid;
     public $text;
     public $nick;
+    public $userid;
     // public $password;
     public $created;
     // public $updated;

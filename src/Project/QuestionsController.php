@@ -136,6 +136,8 @@ class QuestionsController implements ContainerInjectableInterface
                 $tagsquestions->save();
             }
 
+            return $response->redirect("questions");
+
             // return true;
     }
 
@@ -219,15 +221,6 @@ class QuestionsController implements ContainerInjectableInterface
         ;";
         $tags = $this->di->get("db")->executeFetchAll($sql);
 
-
-        // SELECT *
-        // FROM kurs AS k
-        //     JOIN kurstillfalle AS kt
-        //         ON k.kod = kt.kurskod;
-
-
-        // var_dump($tags);
-
         if ($_SESSION["nick"] ?? null) {
             $page->add("questions/crud/header2");
         } else {
@@ -241,19 +234,92 @@ class QuestionsController implements ContainerInjectableInterface
 
             // "tags" => $tags->findAllWhere("questionid = ?", $id),
 
-
-
             "tags" => $tags,
-
-
-
-
         ]);
+
+
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/newanswercomment");
+        }
+
 
         return $page->render([
             "title" => "View a question",
         ]);
     }
+
+
+
+    public function onequestionActionPost() : object
+    {
+        $session = $this->di->get("session");
+        // $vader = $this->di->get("vader");
+        // $ipHandler = new IpHandler();
+        $request = $this->di->get("request");
+        $response = $this->di->get("response");
+        $commenttext = $request->getPost("commenttext") ?? null;
+        $answertext = $request->getPost("answertext") ?? null;
+        // $tags = $request->getPost("tags");
+        $commenttext2 = Markdown::defaultTransform($commenttext);
+        $answertext2 = Markdown::defaultTransform($answertext);
+        $nick = $session->get("nick");
+        $userid = $session->get("id");
+        $id = $request->getGet("id");
+
+        // $this->di->get("db")->connect();
+        // $sql = "SELECT MAX(id) AS maxid
+        //         FROM Questions
+        // ;";
+        // $lastid = $this->di->get("db")->executeFetchAll($sql);
+        // $newid = intval($lastid[0]->maxid) + 1;
+
+            // var_dump($commenttext2);
+            // var_dump($answertext2);
+            // var_dump($id);
+            // var_dump($nick);
+
+            echo "commenttext: " . $commenttext2;
+            echo "<br>answertext2: " . $answertext2;
+            echo "<br>questionid: " . $id;
+            echo "<br>userid: " . $userid;
+            echo "<br>nick: " . $nick;
+            // var_dump($id);
+            // var_dump($tags);
+            // var_dump($request);
+
+        if ($commenttext2 != null) {
+
+            $comments = new Questioncomments();
+            $comments->setDb($this->di->get("dbqb"));
+            $comments->questionid = $id;
+            $comments->userid = $userid;
+            $comments->text = $commenttext2;
+            $comments->nick = $nick;
+
+            $comments->save();
+
+            return $response->redirect("questions/onequestion?id={$id}");
+
+        }
+
+            // foreach ($tags as $tag) {
+            //     echo "tagid: " . $tag;
+            //     echo " questionid: " . $newid;
+            //     echo "<br>";
+            //     $tagsquestions = new Tagsquestions();
+            //     $tagsquestions->setDb($this->di->get("dbqb"));
+            //     $tagsquestions->tagid = $tag;
+            //     $tagsquestions->questionid = $newid;
+            //     $tagsquestions->save();
+            // }
+
+            // return $response->redirect("questions");
+
+            // return true;
+    }
+
+
+
 
 
 

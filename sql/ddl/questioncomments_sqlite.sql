@@ -13,6 +13,7 @@ CREATE TABLE Questioncomments (
     "questionid" INTEGER NOT NULL,
     "text" TEXT,
     "nick" TEXT,
+    "userid" INTEGER,
     "created" DATETIME DEFAULT (STRFTIME('%Y-%m-%d %H:%M', 'NOW', 'localtime'))
 );
 
