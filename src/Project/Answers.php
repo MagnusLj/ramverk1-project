@@ -30,6 +30,7 @@ class Answers extends ActiveRecordModel
 
     public $id;
     public $questionid;
+    public $userid;
     public $text;
     public $nick;
     // public $password;

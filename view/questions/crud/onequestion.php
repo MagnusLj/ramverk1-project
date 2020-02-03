@@ -47,22 +47,22 @@ endif;
     <!-- </tr> -->
 
 
-    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tags</h5>
+    <h5>Tags</h5>
 
     <?php foreach ($tags as $tag) : ?>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $tag->tag ?></p>
+        <p><?= $tag->tag ?></p>
 
     <?php endforeach; ?>
 
 
-    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kommentarer</h5>
+    <h5>Kommentarer</h5>
 
     <?php foreach ($questioncomments as $questioncomment) : ?>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->created ?> <?= $questioncomment->nick ?></p>
+        <?= $questioncomment->created ?> <?= $questioncomment->nick ?><?= $questioncomment->text ?>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $questioncomment->text ?></p>
+
 
     <?php endforeach; ?>
 
