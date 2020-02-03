@@ -472,10 +472,108 @@ class QuestionsController implements ContainerInjectableInterface
             "answercomments" => $answercomments->findAllWhere("answerid = ?", $answerid),
         ]);
 
+
+        if ($_SESSION["nick"] ?? null) {
+            $page->add("questions/crud/newanswercomment2");
+        }
+
+
+
         return $page->render([
             "title" => "View a question",
         ]);
     }
+
+
+
+
+
+    public function oneanswerActionPost() : object
+    {
+        $session = $this->di->get("session");
+        // $vader = $this->di->get("vader");
+        // $ipHandler = new IpHandler();
+        $request = $this->di->get("request");
+        $response = $this->di->get("response");
+        $commenttext = $request->getPost("commenttext") ?? null;
+        // $answertext = $request->getPost("answertext") ?? null;
+
+        // if (strlen($commenttext < 2)) {
+        //     $commenttext = null;
+        // }
+        //
+        // if (strlen($answertext < 2)) {
+        //     $answertext = null;
+        // }
+
+        // $tags = $request->getPost("tags");
+        $commenttext2 = Markdown::defaultTransform($commenttext);
+        // $answertext2 = Markdown::defaultTransform($answertext);
+
+        if (strlen($commenttext < 2)) {
+            $commenttext = null;
+        }
+
+        // if (strlen($answertext < 2)) {
+        //     $answertext = null;
+        // }
+
+        // if (strlen($answertext2 < 2)) {
+        //     $answertext2 = null;
+        // }
+
+        // echo strlen($commenttext2);
+        // echo strlen($answertext2);
+
+        $nick = $session->get("nick");
+        $userid = $session->get("id");
+        $questionid = $request->getGet("id");
+        $answerid = $request->getGet("answerid");
+
+
+        // $this->di->get("db")->connect();
+        // $sql = "SELECT MAX(id) AS maxid
+        //         FROM Questions
+        // ;";
+        // $lastid = $this->di->get("db")->executeFetchAll($sql);
+        // $newid = intval($lastid[0]->maxid) + 1;
+
+            // var_dump($commenttext2);
+            // var_dump($answertext2);
+            // var_dump($id);
+            // var_dump($nick);
+
+            // echo "commenttext2: " . $commenttext2;
+            // echo "<br>questionid: " . $questionid;
+            // echo "<br>answerid: " . $answerid;
+            // echo "<br>userid: " . $userid;
+            // echo "<br>nick: " . $nick;
+            //
+            // var_dump($commenttext2);
+            // var_dump($questionid);
+            // var_dump($userid);
+            // var_dump($nick);
+
+            // var_dump($id);
+            // var_dump($tags);
+            // var_dump($request);
+
+        if (strlen($commenttext2) > 1) {
+
+            $this->di->get("db")->connect();
+
+            $sql = "INSERT INTO Answercomments ('answerid', 'userid', 'text', 'nick') VALUES ($answerid, $userid, '$commenttext2', '$nick');";
+
+            $this->di->get("db")->execute($sql);
+
+        }
+
+
+        return $response->redirect("questions/oneanswer?oneanswer?id={$questionid}&answerid={$answerid}");
+    }
+
+
+
 
 
 

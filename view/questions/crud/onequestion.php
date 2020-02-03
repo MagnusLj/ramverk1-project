@@ -60,7 +60,7 @@ endif;
 
     <?php foreach ($questioncomments as $questioncomment) : ?>
 
-        <?= $questioncomment->created ?> <?= $questioncomment->nick ?><?= $questioncomment->text ?>
+        <?= $questioncomment->created ?> <?= $questioncomment->nick ?><?= $questioncomment->text ?><br>
 
 
 
@@ -76,7 +76,7 @@ endif;
 
     <p><?= $answer->created ?> <?= $answer->nick ?></p>
 
-    <a href="<?= url("questions/oneanswer?id={$items->id}&answerid={$answer->id}"); ?>"><?= $text ?></a>
+    <a href="<?= url("questions/oneanswer?id={$items->id}&answerid={$answer->id}"); ?>"><?= $text ?></a><br>
 
 
 <?php endforeach; ?>

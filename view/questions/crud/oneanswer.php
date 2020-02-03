@@ -42,20 +42,17 @@ endif;
 <!-- <table> -->
 <h3>Svar</h3>
     <!-- <tr> -->
-        <p><?= $answers->created ?> <?= $answers->nick ?></p>
+        <?= $answers->created ?> <?= $answers->nick ?><?= $answers->text ?>
     <!-- </tr> -->
 
     <!-- <tr> -->
-        <p><?= $answers->text ?></p>
     <!-- </tr> -->
 
-    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kommentarer</h5>
+    <h5>Kommentarer</h5>
 
     <?php foreach ($answercomments as $answercomment) : ?>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $answercomment->created ?> <?= $answercomment->nick ?></p>
-
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $answercomment->text ?></p>
+        <?= $answercomment->created ?> <?= $answercomment->nick ?><?= $answercomment->text ?><br>
 
     <?php endforeach; ?>
 

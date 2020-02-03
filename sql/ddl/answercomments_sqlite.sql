@@ -12,6 +12,7 @@ CREATE TABLE Answercomments (
     "id" INTEGER PRIMARY KEY NOT NULL,
     "answerid" INTEGER NOT NULL,
     "text" TEXT,
+    "userid" INTEGER,
     "nick" TEXT,
     "created" DATETIME DEFAULT (STRFTIME('%Y-%m-%d %H:%M', 'NOW', 'localtime'))
 );
