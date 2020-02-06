@@ -5,6 +5,16 @@
 return [
     "routes" => [
         [
+            "info" => "Hem",
+            "mount" => "home",
+            "handler" => "\Malm18\Project\HomeController",
+        ],
+        [
+            "info" => "Om",
+            "mount" => "about",
+            "handler" => "\Malm18\Project\AboutController",
+        ],
+        [
             "info" => "Userlist.",
             "mount" => "peoplelist",
             "handler" => "\Malm18\Project\PeopleListController",

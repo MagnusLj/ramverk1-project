@@ -21,7 +21,7 @@
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
     "id" INTEGER PRIMARY KEY NOT NULL,
-    "nick" TEXT NOT NULL,
+    "nick" TEXT,
     "email" VARCHAR NOT NULL,
     "gravatarUrl" VARCHAR NOT NULL,
     "password" TEXT,
@@ -29,5 +29,7 @@ CREATE TABLE User (
     "updated" DATETIME,
     "deleted" DATETIME,
     "active" DATETIME,
-    "points" INTEGER
+    "points" INTEGER DEFAULT 0,
+    "questions" INTEGER DEFAULT 0,
+    "answers" INTEGER DEFAULT 0
 );

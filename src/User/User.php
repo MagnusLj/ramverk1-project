@@ -38,6 +38,8 @@ class User extends ActiveRecordModel
     public $deleted;
     public $active;
     public $points;
+    public $questions;
+    public $answers;
 
 
     /**

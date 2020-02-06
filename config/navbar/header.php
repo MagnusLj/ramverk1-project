@@ -11,7 +11,7 @@ return [
     "items" => [
         [
             "text" => "Hem",
-            "url" => "",
+            "url" => "home",
             "title" => "Första sidan, börja här.",
         ],
         // [
@@ -55,19 +55,19 @@ return [
         // ],
         [
             "text" => "Om",
-            "url" => "om",
+            "url" => "about",
             "title" => "Om denna webbplats.",
         ],
-        [
-            "text" => "Styleväljare",
-            "url" => "style",
-            "title" => "Välj stylesheet.",
-        ],
-        [
-            "text" => "Verktyg",
-            "url" => "verktyg",
-            "title" => "Verktyg och möjligheter för utveckling.",
-        ],
+        // [
+        //     "text" => "Styleväljare",
+        //     "url" => "style",
+        //     "title" => "Välj stylesheet.",
+        // ],
+        // [
+        //     "text" => "Verktyg",
+        //     "url" => "verktyg",
+        //     "title" => "Verktyg och möjligheter för utveckling.",
+        // ],
         // [
         //     "text" => "IP-kollare",
         //     "url" => "ip-checker",

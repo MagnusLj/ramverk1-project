@@ -25,4 +25,6 @@ class Tags extends ActiveRecordModel
     public $id;
     // public $questionid;
     public $tag;
+
+    public $points;
 }

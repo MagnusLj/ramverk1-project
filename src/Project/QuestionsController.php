@@ -135,19 +135,78 @@ class QuestionsController implements ContainerInjectableInterface
 
 
 
+            // $usersz = new User();
+            // $usersz->setDb($this->di->get("dbqb"));
+            // $usersz->find("id", $id);
+            // $points = $usersz->points;
+            // $questions = $usersz->questions;
+            //
+            // echo "points: " . $points;
+            // echo "questions: " . $questions;
+            // var_dump($usersz);
+
+            // $usersz->update("id=?", $id);
+            // $usersz->points += 1;
+            // $usersz->questions += 1;
+            // $usersz->save();
+
+
+            // "items" => $oneQuestion->find("id", $id),
+
+
+
+            // $this->di->get("db")->connect();
+            //
+            // $sql = "SELECT points FROM Users WHERE userid = $id;";
+            //
+            // $this->di->get("db")->execute($sql);
+            // //
+            // $this->di->get("db")->connect();
+            //
+            // $sql = "UPDATE Users SET ;";
+            //
+            // $this->di->get("db")->execute($sql);
+            //
+            //
+            //
+            //
+            // UPDATE table_name
+            // SET column1 = value1, column2 = value2, ...
+            // WHERE condition;
+            //
+            //
+            //
+            $usersz = new User();
+            $usersz->setDb($this->di->get("dbqb"));
+            $usersz->find("id", $id);
+            // $usersz->update("id=?", $id);
+            $usersz->points += 1;
+            $usersz->questions += 1;
+            $usersz->save();
 
 
 
 
             foreach ($tags as $tag) {
-                echo "tagid: " . $tag;
-                echo " questionid: " . $newid;
-                echo "<br>";
+                // echo "tagid: " . $tag;
+                // echo " questionid: " . $newid;
+                // echo "<br>";
                 $tagsquestions = new Tagsquestions();
                 $tagsquestions->setDb($this->di->get("dbqb"));
                 $tagsquestions->tagid = $tag;
                 $tagsquestions->questionid = $newid;
                 $tagsquestions->save();
+
+
+
+                $tagsz = new Tags();
+                $tagsz->setDb($this->di->get("dbqb"));
+                $tagsz->find("id", $tag);
+                $tagsz->points += 1;
+                $tagsz->save();
+
+
+
             }
 
             return $response->redirect("questions");
@@ -396,6 +455,16 @@ class QuestionsController implements ContainerInjectableInterface
             // $sql = "INSERT INTO products (title) VALUES (?);";
             // $app->db->execute($sql, [$title]);
             $this->di->get("db")->execute($sql);
+
+
+
+            $usersz = new User();
+            $usersz->setDb($this->di->get("dbqb"));
+            $usersz->find("id", $userid);
+            // $usersz->update("id=?", $id);
+            $usersz->points += 1;
+            $usersz->answers += 1;
+            $usersz->save();
 
             // $questions = $this->di->get("db")->executeFetchAll($sql);
 

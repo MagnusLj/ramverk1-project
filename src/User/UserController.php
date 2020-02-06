@@ -6,6 +6,8 @@ use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
 use Malm18\User\HTMLForm\UserLoginForm;
 use Malm18\User\HTMLForm\CreateUserForm;
+use Malm18\User\HTMLForm\EditForm;
+use Malm18\User\HTMLForm\UpdateForm;
 
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
@@ -154,6 +156,29 @@ class UserController implements ContainerInjectableInterface
 
         return $page->render([
             "title" => "A create user page",
+        ]);
+    }
+
+
+    /**
+     * Handler with form to update an item.
+     *
+     * @param int $id the id to update.
+     *
+     * @return object as a response object
+     */
+    public function updateAction(int $id) : object
+    {
+        $page = $this->di->get("page");
+        $form = new UpdateForm($this->di, $id);
+        $form->check();
+
+        $page->add("people/crud/update", [
+            "form" => $form->getHTML(),
+        ]);
+
+        return $page->render([
+            "title" => "Update an item",
         ]);
     }
 }
