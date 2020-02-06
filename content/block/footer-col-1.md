@@ -1,3 +1,3 @@
-#### Vänster
+<!-- #### Vänster
 
-Denna kolumn är inte till höger.
+Denna kolumn är inte till höger. -->

@@ -88,7 +88,7 @@ class UserController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "A login page",
+            "title" => "Logga in",
         ]);
     }
 
@@ -155,7 +155,7 @@ class UserController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "A create user page",
+            "title" => "Skapa ny användare",
         ]);
     }
 
@@ -167,9 +167,11 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function updateAction(int $id) : object
+    public function updateAction() : object
     {
         $page = $this->di->get("page");
+        $session = $this->di->get("session");
+        $id = $session->get("id");
         $form = new UpdateForm($this->di, $id);
         $form->check();
 
@@ -178,7 +180,7 @@ class UserController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "Update an item",
+            "title" => "Uppdatera uppgifter",
         ]);
     }
 }

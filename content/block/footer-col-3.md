@@ -1,3 +1,3 @@
-#### Höger
+<!-- #### Höger
 
-Den här kolumnen är längst till höger.
+Den här kolumnen är längst till höger. -->

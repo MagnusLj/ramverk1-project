@@ -26,16 +26,16 @@ class UserLoginForm extends FormModel
         $this->form->create(
             [
                 "id" => __CLASS__,
-                "legend" => "User Login"
+                "legend" => "Logga in här"
             ],
             [
-                "user" => [
+                "nick" => [
                     "type"        => "text",
                     //"description" => "Here you can place a description.",
                     //"placeholder" => "Here is a placeholder",
                 ],
 
-                "password" => [
+                "lösenord" => [
                     "type"        => "password",
                     //"description" => "Here you can place a description.",
                     //"placeholder" => "Here is a placeholder",
@@ -43,7 +43,7 @@ class UserLoginForm extends FormModel
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Login",
+                    "value" => "Logga in",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
@@ -64,8 +64,8 @@ class UserLoginForm extends FormModel
     public function callbackSubmit()
     {
         // Get values from the submitted form
-        $nick       = $this->form->value("user");
-        $password      = $this->form->value("password");
+        $nick       = $this->form->value("nick");
+        $password      = $this->form->value("lösenord");
 
         // Try to login
         // $db = $this->di->get("dbqb");
@@ -91,7 +91,7 @@ class UserLoginForm extends FormModel
 
         if (!$res) {
             $this->form->rememberValues();
-            $this->form->addOutput("User or password did not match.");
+            $this->form->addOutput("Användarnamn eller lösenord var fel.");
             return false;
         }
 

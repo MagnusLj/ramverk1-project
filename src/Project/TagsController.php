@@ -106,6 +106,10 @@ class TagsController implements ContainerInjectableInterface
         $questions = $this->di->get("db")->executeFetchAll($sql);
 
 
+        $tags = new Tags();
+        $tags->setDb($this->di->get("dbqb"));
+
+
 
 
 
@@ -116,6 +120,7 @@ class TagsController implements ContainerInjectableInterface
             // "questions" => $questions->findAllWhere("questionid = ?", $id),
             "questions" => $questions,
             "tagid" => $tagid,
+            "tags" => $tags->find("id", $tagid),
             // "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
             // "tags" => $tags->findAllWhere("questionid = ?", $id),
         ]);

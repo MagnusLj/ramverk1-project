@@ -24,7 +24,7 @@ class UpdateForm extends FormModel
         $this->form->create(
             [
                 "id" => __CLASS__,
-                "legend" => "Update details of the item",
+                "legend" => "Updatera nick eller epost",
             ],
             [
                 "id" => [
@@ -54,7 +54,7 @@ class UpdateForm extends FormModel
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Save",
+                    "value" => "Spara",
                     "callback" => [$this, "callbackSubmit"]
                 ],
 

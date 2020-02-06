@@ -13,17 +13,12 @@ namespace Anax\View;
 $items = isset($items) ? $items : null;
 
 // Create urls for navigation
-$urlToCreate = url("book/create");
-$urlToDelete = url("book/delete");
+
 
 
 
 ?><h1>Se alla användare</h1>
 
-<p>
-    <a href="<?= $urlToCreate ?>">Create</a> |
-    <a href="<?= $urlToDelete ?>">Delete</a>
-</p>
 
 <?php if (!$items) : ?>
     <p>Det finns inga användare.</p>

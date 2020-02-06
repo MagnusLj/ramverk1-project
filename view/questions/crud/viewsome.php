@@ -34,7 +34,7 @@ $urlToDelete = url("book/delete");
     <a href="<?= $urlToDelete ?>">Delete</a>
 </p>
 
-<h1>Frågor med den valda tagen</h1>
+<h1>Frågor med tagen <?= $tags->tag ?></h1>
 
 <?php if (!$questions) : ?>
     <p>Det finns inga frågor med den tagen.</p>

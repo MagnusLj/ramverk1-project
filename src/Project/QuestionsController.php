@@ -662,7 +662,7 @@ class QuestionsController implements ContainerInjectableInterface
         $page = $this->di->get("page");
         $request = $this->di->get("request");
         $id = $request->getGet("id");
-        echo $id;
+        // echo $id;
 
         $questions = new Questions();
         $questions->setDb($this->di->get("dbqb"));
@@ -675,6 +675,9 @@ class QuestionsController implements ContainerInjectableInterface
 
         $answercomments = new Answercomments();
         $answercomments->setDb($this->di->get("dbqb"));
+
+        $users = new User();
+        $users->setDb($this->di->get("dbqb"));
 
     //    $tags = new Tags();
     //    $tags->setDb($this->di->get("dbqb"));
@@ -701,6 +704,7 @@ class QuestionsController implements ContainerInjectableInterface
             "questions" => $questions->findAllWhere("userid = ?", $id),
             "answers" => $answers->findAllWhere("userid = ?", $id),
             "questioncomments" => $questioncomments->findAllWhere("questionid = ?", $id),
+            "users" => $users->find("id", $id),
 
             // "tags" => $tags->findAllWhere("questionid = ?", $id),
 

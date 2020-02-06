@@ -10,7 +10,7 @@
 
 <navbar class="navbar">
     <!-- <a href="content">Visa allt innehåll</a> | -->
-    <a href="admin">Redigera profil</a> |
+    <a href="user/update">Redigera profil</a> |
     <!-- <a href="?route=create">Create</a> | -->
     <!-- <a href="?route=reset">Reset database</a> | -->
     <!-- <a href="pages">Sidor</a> |
