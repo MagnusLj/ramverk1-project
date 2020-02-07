@@ -50,7 +50,6 @@ endif;
     <h5>Tags</h5>
 
     <?php foreach ($tags as $tag) : ?>
-
         <p><?= $tag->tag ?></p>
 
     <?php endforeach; ?>
@@ -59,7 +58,6 @@ endif;
     <h5>Kommentarer</h5>
 
     <?php foreach ($questioncomments as $questioncomment) : ?>
-
         <?= $questioncomment->created ?> <?= $questioncomment->nick ?><?= $questioncomment->text ?><br>
 
 
@@ -71,8 +69,7 @@ endif;
     <h3>Svar</h3>
 
 <?php foreach ($answers as $answer) : ?>
-
-    <?php $text = (strlen($answer->text) > 70) ? substr($answer->text,0,67).'...' : $answer->text; ?>
+    <?php $text = (strlen($answer->text) > 70) ? substr($answer->text, 0, 67).'...' : $answer->text; ?>
 
     <p><?= $answer->created ?> <?= $answer->nick ?></p>
 

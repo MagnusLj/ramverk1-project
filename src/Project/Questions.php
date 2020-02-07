@@ -92,11 +92,4 @@ class Questions extends ActiveRecordModel
 //         $this->find("nick", $nick);
 //         return password_verify($password, $this->password);
 //     }
-
-
-
-
-
-
-
 }

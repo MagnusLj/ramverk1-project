@@ -187,29 +187,26 @@ class QuestionsController implements ContainerInjectableInterface
 
 
 
-            foreach ($tags as $tag) {
-                // echo "tagid: " . $tag;
-                // echo " questionid: " . $newid;
-                // echo "<br>";
-                $tagsquestions = new Tagsquestions();
-                $tagsquestions->setDb($this->di->get("dbqb"));
-                $tagsquestions->tagid = $tag;
-                $tagsquestions->questionid = $newid;
-                $tagsquestions->save();
+        foreach ($tags as $tag) {
+            // echo "tagid: " . $tag;
+            // echo " questionid: " . $newid;
+            // echo "<br>";
+            $tagsquestions = new Tagsquestions();
+            $tagsquestions->setDb($this->di->get("dbqb"));
+            $tagsquestions->tagid = $tag;
+            $tagsquestions->questionid = $newid;
+            $tagsquestions->save();
 
 
 
-                $tagsz = new Tags();
-                $tagsz->setDb($this->di->get("dbqb"));
-                $tagsz->find("id", $tag);
-                $tagsz->points += 1;
-                $tagsz->save();
+            $tagsz = new Tags();
+            $tagsz->setDb($this->di->get("dbqb"));
+            $tagsz->find("id", $tag);
+            $tagsz->points += 1;
+            $tagsz->save();
+        }
 
-
-
-            }
-
-            return $response->redirect("questions");
+        return $response->redirect("questions");
 
             // return true;
     }
@@ -393,7 +390,6 @@ class QuestionsController implements ContainerInjectableInterface
             // var_dump($request);
 
         if (strlen($commenttext2) > 1) {
-
             // $comments = new Questioncomments();
             // $comments->setDb($this->di->get("dbqb"));
             // $comments->questionid = $id;
@@ -410,8 +406,7 @@ class QuestionsController implements ContainerInjectableInterface
             //
             // ;";
 
-            $sql = "INSERT INTO Questioncomments ('questionid', 'userid', 'text', 'nick') VALUES ($id, $userid, '$commenttext2', '$nick');"
-    ;
+            $sql = "INSERT INTO Questioncomments ('questionid', 'userid', 'text', 'nick') VALUES ($id, $userid, '$commenttext2', '$nick');";
 
             //     $title = $_POST["contentTitle"];
             // $app->db->connect();
@@ -424,13 +419,11 @@ class QuestionsController implements ContainerInjectableInterface
 
 
             // return $response->redirect("questions/onequestion?id={$id}");
-
         }
 
 
 
         if (strlen($answertext2) > 1) {
-
             // $comments = new Questioncomments();
             // $comments->setDb($this->di->get("dbqb"));
             // $comments->questionid = $id;
@@ -447,8 +440,7 @@ class QuestionsController implements ContainerInjectableInterface
             //
             // ;";
 
-            $sql = "INSERT INTO Answers ('questionid', 'userid', 'text', 'nick') VALUES ($id, $userid, '$answertext2', '$nick');"
-    ;
+            $sql = "INSERT INTO Answers ('questionid', 'userid', 'text', 'nick') VALUES ($id, $userid, '$answertext2', '$nick');";
 
             //     $title = $_POST["contentTitle"];
             // $app->db->connect();
@@ -471,7 +463,6 @@ class QuestionsController implements ContainerInjectableInterface
 
 
             // return $response->redirect("questions/onequestion?id={$id}");
-
         }
 
         return $response->redirect("questions/onequestion?id={$id}");
@@ -490,11 +481,6 @@ class QuestionsController implements ContainerInjectableInterface
             // return $response->redirect("questions");
 
             // return true;
-
-
-
-
-
     }
 
 
@@ -628,13 +614,11 @@ class QuestionsController implements ContainerInjectableInterface
             // var_dump($request);
 
         if (strlen($commenttext2) > 1) {
-
             $this->di->get("db")->connect();
 
             $sql = "INSERT INTO Answercomments ('answerid', 'userid', 'text', 'nick') VALUES ($answerid, $userid, '$commenttext2', '$nick');";
 
             $this->di->get("db")->execute($sql);
-
         }
 
 

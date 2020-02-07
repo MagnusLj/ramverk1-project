@@ -45,7 +45,6 @@ endif;
 
 
     <?php foreach ($questions as $question) : ?>
-
         <p><a href="<?= url("questions/onequestion?id={$question->questionid}"); ?>"><?= $question->title ?></a></p>
 
     <?php endforeach; ?>

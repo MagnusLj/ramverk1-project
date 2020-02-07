@@ -37,14 +37,7 @@ endif;
 
 
 <?php foreach ($questions as $question) : ?>
-
-
-
-
     <a href="<?= url("questions/onequestion?id={$question->id}"); ?>"><?= $question->title ?></a></p>
-
-
-
 <?php endforeach; ?>
 
 
@@ -53,14 +46,7 @@ endif;
 
 
 <?php foreach ($userpoints as $userpoint) : ?>
-
-
-
-
     <p><a href="<?= url("questions/oneusers?id={$userpoint->id}");?>"><?= $userpoint->nick ?></a> har ställt <?= $userpoint->questions ?> och svarat på <?= $userpoint->answers ?> frågor</p>
-
-
-
 <?php endforeach; ?>
 
 
@@ -72,11 +58,5 @@ endif;
 
 
 <?php foreach ($tags as $tag) : ?>
-
-
     <p><a href="<?= url("tags/viewsome?tagid={$tag->id}");?>"><?= $tag->tag?></a>  <?= $tag->points ?> frågor</p>
-
-
-
-
 <?php endforeach; ?>

@@ -63,21 +63,18 @@ class HomeController implements ContainerInjectableInterface
 
 
 
-$this->di->get("db")->connect();
-$sql = "SELECT * FROM Tags ORDER BY points DESC LIMIT 3
-;";
-$tags = $this->di->get("db")->executeFetchAll($sql);
+        $this->di->get("db")->connect();
+        $sql = "SELECT * FROM Tags ORDER BY points DESC LIMIT 3;";
+        $tags = $this->di->get("db")->executeFetchAll($sql);
 
 
-$this->di->get("db")->connect();
-$sql = "SELECT * FROM User ORDER BY points DESC LIMIT 3
-;";
-$userpoints = $this->di->get("db")->executeFetchAll($sql);
+        $this->di->get("db")->connect();
+        $sql = "SELECT * FROM User ORDER BY points DESC LIMIT 3;";
+        $userpoints = $this->di->get("db")->executeFetchAll($sql);
 
-$this->di->get("db")->connect();
-$sql = "SELECT * FROM Questions ORDER BY id DESC LIMIT 3
-;";
-$questions = $this->di->get("db")->executeFetchAll($sql);
+        $this->di->get("db")->connect();
+        $sql = "SELECT * FROM Questions ORDER BY id DESC LIMIT 3;";
+        $questions = $this->di->get("db")->executeFetchAll($sql);
 
 // var_dump($userpoints);
 
@@ -122,8 +119,7 @@ $questions = $this->di->get("db")->executeFetchAll($sql);
         //
         // ;";
 
-        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.id = '$tagid';"
-;
+        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.id = '$tagid';";
 
 
 

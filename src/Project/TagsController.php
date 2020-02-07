@@ -97,8 +97,7 @@ class TagsController implements ContainerInjectableInterface
         //
         // ;";
 
-        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.id = '$tagid';"
-;
+        $sql = "SELECT * FROM questions JOIN tagsquestions ON tagsquestions.questionid = questions.id JOIN tags ON tags.id = tagsquestions.tagid WHERE tags.id = '$tagid';";
 
 
 

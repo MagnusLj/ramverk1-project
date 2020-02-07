@@ -51,9 +51,7 @@ endif;
     <h5>Kommentarer</h5>
 
     <?php foreach ($answercomments as $answercomment) : ?>
-
         <?= $answercomment->created ?> <?= $answercomment->nick ?><?= $answercomment->text ?><br>
-
     <?php endforeach; ?>
 
 

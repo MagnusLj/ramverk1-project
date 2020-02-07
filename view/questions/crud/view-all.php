@@ -30,7 +30,6 @@ endif;
 
 
     <?php foreach ($items as $item) : ?>
-
         <p><?= $item->nick ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <a href="<?= url("questions/onequestion?id={$item->id}"); ?>"><?= $item->title ?></a></p>

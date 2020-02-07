@@ -129,8 +129,6 @@ class UserController implements ContainerInjectableInterface
         }
 
         // $this->form->addOutput("User " . $user->nick . " logged in.");
-
-
     }
 
 
