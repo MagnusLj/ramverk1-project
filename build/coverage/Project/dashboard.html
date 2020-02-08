@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../.css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/style.css" rel="stylesheet" type="text/css">
+  <link href="../.css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Project</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AboutController.php.html#19">Malm18\Project\AboutController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#19">Malm18\Project\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PeopleListController.php.html#19">Malm18\Project\PeopleListController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#20">Malm18\Project\QuestionsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TagsController.php.html#19">Malm18\Project\TagsController</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="QuestionsController.php.html#20">Malm18\Project\QuestionsController</a></td><td class="text-right">420</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AboutController.php.html#56"><abbr title="Malm18\Project\AboutController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#88"><abbr title="Malm18\Project\QuestionsController::indexActionPost">indexActionPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TagsController.php.html#153"><abbr title="Malm18\Project\TagsController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TagsController.php.html#81"><abbr title="Malm18\Project\TagsController::viewsomeActionGet">viewsomeActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TagsController.php.html#56"><abbr title="Malm18\Project\TagsController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#644"><abbr title="Malm18\Project\QuestionsController::oneusersActionGet">oneusersActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#546"><abbr title="Malm18\Project\QuestionsController::oneanswerActionPost">oneanswerActionPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#499"><abbr title="Malm18\Project\QuestionsController::oneanswerActionGet">oneanswerActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#323"><abbr title="Malm18\Project\QuestionsController::onequestionActionPost">onequestionActionPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#263"><abbr title="Malm18\Project\QuestionsController::onequestionActionGet">onequestionActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="QuestionsController.php.html#57"><abbr title="Malm18\Project\QuestionsController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AboutController.php.html#98"><abbr title="Malm18\Project\AboutController::viewsomeActionGet">viewsomeActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PeopleListController.php.html#113"><abbr title="Malm18\Project\PeopleListController::createAction">createAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PeopleListController.php.html#87"><abbr title="Malm18\Project\PeopleListController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PeopleListController.php.html#56"><abbr title="Malm18\Project\PeopleListController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#196"><abbr title="Malm18\Project\HomeController::createAction">createAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#170"><abbr title="Malm18\Project\HomeController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#103"><abbr title="Malm18\Project\HomeController::viewsomeActionGet">viewsomeActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#56"><abbr title="Malm18\Project\HomeController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AboutController.php.html#192"><abbr title="Malm18\Project\AboutController::createAction">createAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AboutController.php.html#166"><abbr title="Malm18\Project\AboutController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TagsController.php.html#179"><abbr title="Malm18\Project\TagsController::createAction">createAction</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="QuestionsController.php.html#323"><abbr title="Malm18\Project\QuestionsController::onequestionActionPost">onequestionActionPost</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="QuestionsController.php.html#57"><abbr title="Malm18\Project\QuestionsController::indexActionGet">indexActionGet</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="QuestionsController.php.html#263"><abbr title="Malm18\Project\QuestionsController::onequestionActionGet">onequestionActionGet</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="QuestionsController.php.html#499"><abbr title="Malm18\Project\QuestionsController::oneanswerActionGet">oneanswerActionGet</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="QuestionsController.php.html#546"><abbr title="Malm18\Project\QuestionsController::oneanswerActionPost">oneanswerActionPost</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="QuestionsController.php.html#88"><abbr title="Malm18\Project\QuestionsController::indexActionPost">indexActionPost</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.3.3</a> with <a href="https://xdebug.org/">Xdebug 2.7.0RC2</a> and <a href="https://phpunit.de/">PHPUnit 7.5.18</a> at Sat Feb 8 0:33:16 CET 2020.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../.js/jquery.min.js" type="text/javascript"></script>
+  <script src="../.js/d3.min.js" type="text/javascript"></script>
+  <script src="../.js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([5,0,0,0,0,0,0,0,0,0,0,7], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([22,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,4,"<a href=\"AboutController.php.html#19\">Malm18\\Project\\AboutController<\/a>"],[100,0,"<a href=\"Answercomments.php.html#10\">Malm18\\Project\\Answercomments<\/a>"],[100,0,"<a href=\"Answers.php.html#10\">Malm18\\Project\\Answers<\/a>"],[0,4,"<a href=\"HomeController.php.html#19\">Malm18\\Project\\HomeController<\/a>"],[100,0,"<a href=\"People.php.html#10\">Malm18\\Project\\People<\/a>"],[0,3,"<a href=\"PeopleListController.php.html#19\">Malm18\\Project\\PeopleListController<\/a>"],[100,0,"<a href=\"Questioncomments.php.html#10\">Malm18\\Project\\Questioncomments<\/a>"],[100,0,"<a href=\"Questions.php.html#10\">Malm18\\Project\\Questions<\/a>"],[0,20,"<a href=\"QuestionsController.php.html#20\">Malm18\\Project\\QuestionsController<\/a>"],[100,0,"<a href=\"Tags.php.html#10\">Malm18\\Project\\Tags<\/a>"],[0,4,"<a href=\"TagsController.php.html#19\">Malm18\\Project\\TagsController<\/a>"],[100,0,"<a href=\"Tagsquestions.php.html#10\">Malm18\\Project\\Tagsquestions<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"AboutController.php.html#56\">Malm18\\Project\\AboutController::indexActionGet<\/a>"],[0,1,"<a href=\"AboutController.php.html#98\">Malm18\\Project\\AboutController::viewsomeActionGet<\/a>"],[0,1,"<a href=\"AboutController.php.html#166\">Malm18\\Project\\AboutController::loginAction<\/a>"],[0,1,"<a href=\"AboutController.php.html#192\">Malm18\\Project\\AboutController::createAction<\/a>"],[0,1,"<a href=\"HomeController.php.html#56\">Malm18\\Project\\HomeController::indexActionGet<\/a>"],[0,1,"<a href=\"HomeController.php.html#103\">Malm18\\Project\\HomeController::viewsomeActionGet<\/a>"],[0,1,"<a href=\"HomeController.php.html#170\">Malm18\\Project\\HomeController::loginAction<\/a>"],[0,1,"<a href=\"HomeController.php.html#196\">Malm18\\Project\\HomeController::createAction<\/a>"],[0,1,"<a href=\"PeopleListController.php.html#56\">Malm18\\Project\\PeopleListController::indexActionGet<\/a>"],[0,1,"<a href=\"PeopleListController.php.html#87\">Malm18\\Project\\PeopleListController::loginAction<\/a>"],[0,1,"<a href=\"PeopleListController.php.html#113\">Malm18\\Project\\PeopleListController::createAction<\/a>"],[0,3,"<a href=\"QuestionsController.php.html#57\">Malm18\\Project\\QuestionsController::indexActionGet<\/a>"],[0,2,"<a href=\"QuestionsController.php.html#88\">Malm18\\Project\\QuestionsController::indexActionPost<\/a>"],[0,3,"<a href=\"QuestionsController.php.html#263\">Malm18\\Project\\QuestionsController::onequestionActionGet<\/a>"],[0,5,"<a href=\"QuestionsController.php.html#323\">Malm18\\Project\\QuestionsController::onequestionActionPost<\/a>"],[0,3,"<a href=\"QuestionsController.php.html#499\">Malm18\\Project\\QuestionsController::oneanswerActionGet<\/a>"],[0,3,"<a href=\"QuestionsController.php.html#546\">Malm18\\Project\\QuestionsController::oneanswerActionPost<\/a>"],[0,1,"<a href=\"QuestionsController.php.html#644\">Malm18\\Project\\QuestionsController::oneusersActionGet<\/a>"],[0,1,"<a href=\"TagsController.php.html#56\">Malm18\\Project\\TagsController::indexActionGet<\/a>"],[0,1,"<a href=\"TagsController.php.html#81\">Malm18\\Project\\TagsController::viewsomeActionGet<\/a>"],[0,1,"<a href=\"TagsController.php.html#153\">Malm18\\Project\\TagsController::loginAction<\/a>"],[0,1,"<a href=\"TagsController.php.html#179\">Malm18\\Project\\TagsController::createAction<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
