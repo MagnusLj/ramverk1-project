@@ -29,10 +29,7 @@ $urlToDelete = url("book/delete");
 
 ?>
 
-<p>
-    <a href="<?= $urlToCreate ?>">Create</a> |
-    <a href="<?= $urlToDelete ?>">Delete</a>
-</p>
+
 
 <h1>Frågor med tagen <?= $tags->tag ?></h1>
 

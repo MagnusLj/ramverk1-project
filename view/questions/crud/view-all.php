@@ -22,7 +22,7 @@ $items = isset($items) ? $items : null;
 
 
 <?php if (!$items) : ?>
-    <p>There are no books to show.</p>
+    <p>Det finns inga frågor.</p>
     <?php
     return;
 endif;

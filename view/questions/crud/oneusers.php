@@ -32,7 +32,7 @@ $tags = isset($tags) ? $tags : null;
 
 
 <?php if (!$items) : ?>
-    <p>There are no books to show.</p>
+    <p>Det finns inga frågor att visa.</p>
     <?php
     return;
 endif;

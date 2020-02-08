@@ -27,13 +27,9 @@ $urlToDelete = url("book/delete");
 
 ?><h1> <?= $items->title ?> </h1>
 
-<p>
-    <a href="<?= $urlToCreate ?>">Create</a> |
-    <a href="<?= $urlToDelete ?>">Delete</a>
-</p>
 
 <?php if (!$items) : ?>
-    <p>There are no books to show.</p>
+    <p>Det finns inga svar att visa.</p>
     <?php
     return;
 endif;

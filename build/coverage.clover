@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1581118396">
-  <project timestamp="1581118396">
+<coverage generated="1581132654">
+  <project timestamp="1581132654">
     <package name="Malm18\Book">
       <file name="C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Book\Book.php">
         <class name="Malm18\Book\Book" namespace="Malm18\Book">
