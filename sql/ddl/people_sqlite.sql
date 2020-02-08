@@ -14,12 +14,12 @@ CREATE TABLE People (
     "email" VARCHAR NOT NULL
 );
 
-INSERT INTO People (
-    "nick",
-    "email"
-) VALUES (
-    "User1",
-    "a@b.se"
-)
-
-;
+-- INSERT INTO People (
+--     "nick",
+--     "email"
+-- ) VALUES (
+--     "User1",
+--     "a@b.se"
+-- )
+--
+-- ;
