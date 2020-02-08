@@ -17,4 +17,4 @@ Go to unzipped folder, do `composer install`
 
 Do `chmod 777 cache/*`
 
-Go to .../<unzipped folder>/htdocs/home in web browser
+Go to .../unzipped folder/htdocs/home in web browser
