@@ -361,6 +361,27 @@ class QuestionsController implements ContainerInjectableInterface
         $userid = $session->get("id");
         $id = $request->getGet("id");
 
+
+        $this->di->get("db")->connect();
+        // $sql = "SELECT * FROM tagsquestions JOIN tags ON tagsquestions.tagid = tags.id WHERE questionid = $id
+        //
+        // ;";
+
+        $sql = "SELECT title FROM Questions WHERE id = $id;";
+
+        //     $title = $_POST["contentTitle"];
+        // $app->db->connect();
+        // $sql = "INSERT INTO products (title) VALUES (?);";
+        // $app->db->execute($sql, [$title]);
+        // $questiontitle = $this->di->get("db")->execute($sql);
+
+        $questiontitle = $this->di->get("db")->executeFetchAll($sql);
+
+        echo "questiontitle";
+        var_dump($questiontitle[0]->title);
+
+        $questiontitle2 = $questiontitle[0]->title;
+
         // $this->di->get("db")->connect();
         // $sql = "SELECT MAX(id) AS maxid
         //         FROM Questions
@@ -373,17 +394,17 @@ class QuestionsController implements ContainerInjectableInterface
             // var_dump($id);
             // var_dump($nick);
 
-            echo "commenttext2: " . $commenttext2;
-            echo "<br>answertext2: " . $answertext2;
-            echo "<br>questionid: " . $id;
-            echo "<br>userid: " . $userid;
-            echo "<br>nick: " . $nick;
-
-            var_dump($commenttext2);
-            var_dump($answertext2);
-            var_dump($id);
-            var_dump($userid);
-            var_dump($nick);
+            // echo "commenttext2: " . $commenttext2;
+            // echo "<br>answertext2: " . $answertext2;
+            // echo "<br>questionid: " . $id;
+            // echo "<br>userid: " . $userid;
+            // echo "<br>nick: " . $nick;
+            //
+            // var_dump($commenttext2);
+            // var_dump($answertext2);
+            // var_dump($id);
+            // var_dump($userid);
+            // var_dump($nick);
 
             // var_dump($id);
             // var_dump($tags);
@@ -440,7 +461,7 @@ class QuestionsController implements ContainerInjectableInterface
             //
             // ;";
 
-            $sql = "INSERT INTO Answers ('questionid', 'userid', 'text', 'nick') VALUES ($id, $userid, '$answertext2', '$nick');";
+            $sql = "INSERT INTO Answers ('questionid', 'questiontitle', 'userid', 'text', 'nick') VALUES ($id, '$questiontitle2', $userid, '$answertext2', '$nick');";
 
             //     $title = $_POST["contentTitle"];
             // $app->db->connect();
@@ -700,6 +721,8 @@ class QuestionsController implements ContainerInjectableInterface
 
 
         ]);
+
+        // var_dump($answers->findAllWhere("userid = ?", $id));
 
         return $page->render([
             "title" => "View a question",

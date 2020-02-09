@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1581132654">
-  <project timestamp="1581132654">
+<coverage generated="1581269556">
+  <project timestamp="1581269556">
     <package name="Malm18\Book">
       <file name="C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Book\Book.php">
         <class name="Malm18\Book\Book" namespace="Malm18\Book">
@@ -410,7 +410,7 @@
         <class name="Malm18\Project\Answers" namespace="Malm18\Project">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
-        <metrics loc="96" ncloc="-15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics loc="97" ncloc="-14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
       <file name="C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Project\HomeController.php">
         <class name="Malm18\Project\HomeController" namespace="Malm18\Project">
@@ -513,7 +513,7 @@
       </file>
       <file name="C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Project\QuestionsController.php">
         <class name="Malm18\Project\QuestionsController" namespace="Malm18\Project">
-          <metrics complexity="20" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="171" coveredstatements="0" elements="178" coveredelements="0"/>
+          <metrics complexity="20" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="0" elements="174" coveredelements="0"/>
         </class>
         <line num="57" type="method" name="indexActionGet" visibility="public" complexity="3" crap="12.00" count="0"/>
         <line num="63" type="stmt" count="0"/>
@@ -606,94 +606,90 @@
         <line num="360" type="stmt" count="0"/>
         <line num="361" type="stmt" count="0"/>
         <line num="362" type="stmt" count="0"/>
-        <line num="376" type="stmt" count="0"/>
-        <line num="377" type="stmt" count="0"/>
+        <line num="365" type="stmt" count="0"/>
+        <line num="370" type="stmt" count="0"/>
         <line num="378" type="stmt" count="0"/>
-        <line num="379" type="stmt" count="0"/>
         <line num="380" type="stmt" count="0"/>
-        <line num="382" type="stmt" count="0"/>
+        <line num="381" type="stmt" count="0"/>
         <line num="383" type="stmt" count="0"/>
-        <line num="384" type="stmt" count="0"/>
-        <line num="385" type="stmt" count="0"/>
-        <line num="386" type="stmt" count="0"/>
-        <line num="392" type="stmt" count="0"/>
-        <line num="404" type="stmt" count="0"/>
-        <line num="409" type="stmt" count="0"/>
-        <line num="415" type="stmt" count="0"/>
-        <line num="426" type="stmt" count="0"/>
-        <line num="438" type="stmt" count="0"/>
-        <line num="443" type="stmt" count="0"/>
-        <line num="449" type="stmt" count="0"/>
-        <line num="453" type="stmt" count="0"/>
-        <line num="454" type="stmt" count="0"/>
-        <line num="455" type="stmt" count="0"/>
-        <line num="457" type="stmt" count="0"/>
-        <line num="458" type="stmt" count="0"/>
+        <line num="413" type="stmt" count="0"/>
+        <line num="425" type="stmt" count="0"/>
+        <line num="430" type="stmt" count="0"/>
+        <line num="436" type="stmt" count="0"/>
+        <line num="447" type="stmt" count="0"/>
         <line num="459" type="stmt" count="0"/>
-        <line num="468" type="stmt" count="0"/>
-        <line num="499" type="method" name="oneanswerActionGet" visibility="public" complexity="3" crap="12.00" count="0"/>
-        <line num="501" type="stmt" count="0"/>
-        <line num="502" type="stmt" count="0"/>
-        <line num="503" type="stmt" count="0"/>
-        <line num="504" type="stmt" count="0"/>
-        <line num="506" type="stmt" count="0"/>
-        <line num="507" type="stmt" count="0"/>
-        <line num="509" type="stmt" count="0"/>
-        <line num="510" type="stmt" count="0"/>
-        <line num="512" type="stmt" count="0"/>
-        <line num="513" type="stmt" count="0"/>
-        <line num="517" type="stmt" count="0"/>
-        <line num="518" type="stmt" count="0"/>
-        <line num="520" type="stmt" count="0"/>
+        <line num="464" type="stmt" count="0"/>
+        <line num="470" type="stmt" count="0"/>
+        <line num="474" type="stmt" count="0"/>
+        <line num="475" type="stmt" count="0"/>
+        <line num="476" type="stmt" count="0"/>
+        <line num="478" type="stmt" count="0"/>
+        <line num="479" type="stmt" count="0"/>
+        <line num="480" type="stmt" count="0"/>
+        <line num="489" type="stmt" count="0"/>
+        <line num="520" type="method" name="oneanswerActionGet" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="522" type="stmt" count="0"/>
+        <line num="523" type="stmt" count="0"/>
         <line num="524" type="stmt" count="0"/>
         <line num="525" type="stmt" count="0"/>
-        <line num="526" type="stmt" count="0"/>
         <line num="527" type="stmt" count="0"/>
+        <line num="528" type="stmt" count="0"/>
+        <line num="530" type="stmt" count="0"/>
         <line num="531" type="stmt" count="0"/>
-        <line num="532" type="stmt" count="0"/>
-        <line num="537" type="stmt" count="0"/>
+        <line num="533" type="stmt" count="0"/>
+        <line num="534" type="stmt" count="0"/>
         <line num="538" type="stmt" count="0"/>
-        <line num="546" type="method" name="oneanswerActionPost" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="539" type="stmt" count="0"/>
+        <line num="541" type="stmt" count="0"/>
+        <line num="545" type="stmt" count="0"/>
+        <line num="546" type="stmt" count="0"/>
+        <line num="547" type="stmt" count="0"/>
         <line num="548" type="stmt" count="0"/>
-        <line num="551" type="stmt" count="0"/>
         <line num="552" type="stmt" count="0"/>
         <line num="553" type="stmt" count="0"/>
-        <line num="565" type="stmt" count="0"/>
-        <line num="568" type="stmt" count="0"/>
+        <line num="558" type="stmt" count="0"/>
+        <line num="559" type="stmt" count="0"/>
+        <line num="567" type="method" name="oneanswerActionPost" visibility="public" complexity="3" crap="12.00" count="0"/>
         <line num="569" type="stmt" count="0"/>
-        <line num="583" type="stmt" count="0"/>
-        <line num="584" type="stmt" count="0"/>
-        <line num="585" type="stmt" count="0"/>
+        <line num="572" type="stmt" count="0"/>
+        <line num="573" type="stmt" count="0"/>
+        <line num="574" type="stmt" count="0"/>
         <line num="586" type="stmt" count="0"/>
-        <line num="616" type="stmt" count="0"/>
-        <line num="617" type="stmt" count="0"/>
-        <line num="619" type="stmt" count="0"/>
-        <line num="621" type="stmt" count="0"/>
-        <line num="625" type="stmt" count="0"/>
-        <line num="644" type="method" name="oneusersActionGet" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="589" type="stmt" count="0"/>
+        <line num="590" type="stmt" count="0"/>
+        <line num="604" type="stmt" count="0"/>
+        <line num="605" type="stmt" count="0"/>
+        <line num="606" type="stmt" count="0"/>
+        <line num="607" type="stmt" count="0"/>
+        <line num="637" type="stmt" count="0"/>
+        <line num="638" type="stmt" count="0"/>
+        <line num="640" type="stmt" count="0"/>
+        <line num="642" type="stmt" count="0"/>
         <line num="646" type="stmt" count="0"/>
-        <line num="647" type="stmt" count="0"/>
-        <line num="648" type="stmt" count="0"/>
-        <line num="651" type="stmt" count="0"/>
-        <line num="652" type="stmt" count="0"/>
-        <line num="654" type="stmt" count="0"/>
-        <line num="655" type="stmt" count="0"/>
-        <line num="657" type="stmt" count="0"/>
-        <line num="658" type="stmt" count="0"/>
-        <line num="660" type="stmt" count="0"/>
-        <line num="661" type="stmt" count="0"/>
-        <line num="663" type="stmt" count="0"/>
-        <line num="664" type="stmt" count="0"/>
+        <line num="665" type="method" name="oneusersActionGet" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="667" type="stmt" count="0"/>
+        <line num="668" type="stmt" count="0"/>
+        <line num="669" type="stmt" count="0"/>
         <line num="672" type="stmt" count="0"/>
-        <line num="686" type="stmt" count="0"/>
-        <line num="687" type="stmt" count="0"/>
-        <line num="688" type="stmt" count="0"/>
-        <line num="689" type="stmt" count="0"/>
-        <line num="690" type="stmt" count="0"/>
-        <line num="691" type="stmt" count="0"/>
-        <line num="704" type="stmt" count="0"/>
-        <line num="705" type="stmt" count="0"/>
-        <metrics loc="766" ncloc="127" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="171" coveredstatements="0" elements="178" coveredelements="0"/>
+        <line num="673" type="stmt" count="0"/>
+        <line num="675" type="stmt" count="0"/>
+        <line num="676" type="stmt" count="0"/>
+        <line num="678" type="stmt" count="0"/>
+        <line num="679" type="stmt" count="0"/>
+        <line num="681" type="stmt" count="0"/>
+        <line num="682" type="stmt" count="0"/>
+        <line num="684" type="stmt" count="0"/>
+        <line num="685" type="stmt" count="0"/>
+        <line num="693" type="stmt" count="0"/>
+        <line num="707" type="stmt" count="0"/>
+        <line num="708" type="stmt" count="0"/>
+        <line num="709" type="stmt" count="0"/>
+        <line num="710" type="stmt" count="0"/>
+        <line num="711" type="stmt" count="0"/>
+        <line num="712" type="stmt" count="0"/>
+        <line num="727" type="stmt" count="0"/>
+        <line num="728" type="stmt" count="0"/>
+        <metrics loc="789" ncloc="110" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="0" elements="174" coveredelements="0"/>
       </file>
       <file name="C:\Users\magnu\OneDrive\dbwebb-kurser\ramverk1\me\kmom10\src\Project\Tags.php">
         <class name="Malm18\Project\Tags" namespace="Malm18\Project">
@@ -1002,6 +998,6 @@
         <metrics loc="184" ncloc="99" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="0" elements="41" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="30" loc="4147" ncloc="1544" classes="22" methods="82" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="721" coveredstatements="16" elements="803" coveredelements="24"/>
+    <metrics files="30" loc="4171" ncloc="1528" classes="22" methods="82" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="717" coveredstatements="16" elements="799" coveredelements="24"/>
   </project>
 </coverage>

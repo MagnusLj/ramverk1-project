@@ -28,7 +28,7 @@ $tags = isset($tags) ? $tags : null;
 // $urlToDelete = url("book/delete");
 
 
-?><h1><img src="<?= $users->gravatarUrl; ?>" alt="" /> <?= $items->nick ?></h1>
+?><h1><img src="<?= $users->gravatarUrl; ?>" alt="" /> <?= $users->nick ?></h1>
 
 
 <?php if (!$items) : ?>
@@ -43,7 +43,7 @@ endif;
 
 
 
-    <h3><?= $items->nick ?> har ställt nedanstående frågor</h3>
+    <h3><?= $users->nick ?> har ställt nedanstående frågor</h3>
 
     <?php foreach ($questions as $question) : ?>
         <p><a href="<?= url("questions/onequestion?id={$question->id}"); ?>"><?= $question->title ?></a></p>
@@ -52,12 +52,9 @@ endif;
 
 
 
-    <h3><?= $items->nick ?> har svarat på nedanstående frågor</h3>
+    <h3><?= $users->nick ?> har svarat på nedanstående frågor</h3>
 
 <?php foreach ($answers as $answer) : ?>
-    <?php $text = (strlen($answer->text) > 70) ? substr($answer->text, 0, 67).'...' : $answer->text; ?>
-
-
     <p><a href="<?= url("questions/onequestion?id={$answer->questionid}"); ?>"><?= $answer->questiontitle ?></a></p>
 
 
