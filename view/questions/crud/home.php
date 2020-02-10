@@ -11,6 +11,8 @@ namespace Anax\View;
 
 // Gather incoming variables and use default values if not set
 $tags = isset($tags) ? $tags : null;
+$userpoints = isset($userpoints) ? $userpoints : null;
+$questions = isset($questions) ? $questions : null;
 
 // var_dump($items);
 
